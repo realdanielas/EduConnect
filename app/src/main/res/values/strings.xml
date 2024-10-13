@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">EduConnect</string>
+    <string name="bienvenido">BIENVENIDO</string>
+    <string name="educonnect">EduConnect</string>
+    <string name="entrar">ENTRAR</string>
+    <string name="correo">Correo</string>
+    <string name="password">Contraseña</string>
+    <string name="no_tienes_cuenta">¿No tienes cuenta?</string>
+    <string name="click_aca_para_registrarte">Click acá para registrarte</string>
+    <string name="ingresa_tu_correo">Ingresa tu correo.</string>
+    <string name="ingresa_tu_contrasenia">Ingresa tu contraseña.</string>
 </resources>

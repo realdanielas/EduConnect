@@ -9,4 +9,12 @@
     <string name="click_aca_para_registrarte">Click acá para registrarte</string>
     <string name="ingresa_tu_correo">Ingresa tu correo.</string>
     <string name="ingresa_tu_contrasenia">Ingresa tu contraseña.</string>
+    <string name="registrate">REGÍSTRATE</string>
+    <string name="yo_soy">Yo soy</string>
+    <string name="nombre">Nombre</string>
+    <string name="docente">DOCENTE</string>
+    <string name="regresar_al_inicio">REGRESAR AL INICIO</string>
+    <string name="padre">PADRE</string>
+    <string name="estudiante">ESTUDIANTE</string>
+    <string name="crear_usuario">CREAR USUARIO</string>
 </resources>

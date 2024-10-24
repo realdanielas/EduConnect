@@ -71,6 +71,7 @@
                 android:hint="@string/ingresa_tu_correo"
                 android:inputType="textEmailAddress"
                 android:fontFamily="@font/varela_round"
+                android:autofillHints="emailAddress"
                 android:textColor="@color/black" />
         </LinearLayout>
 
@@ -110,6 +111,7 @@
                 android:hint="@string/ingresa_tu_contrasenia"
                 android:inputType="textPassword"
                 android:fontFamily="@font/varela_round"
+                android:autofillHints=""
                 android:textColor="@color/black" />
         </LinearLayout>
 
@@ -132,7 +134,7 @@
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:fontFamily="@font/varela_round"
-                android:textSize="11sp" />
+                android:textSize="12sp" />
 
             <TextView
                 android:id="@+id/registrarseTextView"
@@ -144,7 +146,7 @@
                 android:textColor="@color/ed_blue"
                 android:textColorLink="@color/ed_blue"
                 android:fontFamily="@font/varela_round"
-                android:textSize="11sp" />
+                android:textSize="12sp" />
         </LinearLayout>
 
         <Button
@@ -153,11 +155,12 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:backgroundTint="#FEC203"
+            android:fontFamily="@font/varela_round"
             android:text="@string/entrar"
             android:textColor="@color/white"
             android:textColorLink="#FEC203"
             android:textSize="20sp"
-            android:fontFamily="@font/varela_round"
+            style="?android:attr/buttonBarStyle"
             tools:ignore="MissingConstraints" />
 
     </LinearLayout>

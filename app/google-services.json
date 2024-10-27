@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "749817881398",
+    "project_id": "educonnect-7ea42",
+    "storage_bucket": "educonnect-7ea42.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:749817881398:android:bbfdcf3608852d78bb8997",
+        "android_client_info": {
+          "package_name": "sv.edu.catolica.educonnect"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBO_6sfCwPJ9IY-tirFqSEy1ZYWq3aYHFs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

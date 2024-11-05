@@ -9,7 +9,7 @@
     android:layout_height="match_parent"
     android:background="#FFFFFF"
 
-    tools:context=".SignUp">
+    tools:context=".SignUpActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -68,7 +68,9 @@
                 android:textColorLink="#FEC203"
                 android:textSize="11sp"
                 style="?android:attr/buttonBarStyle"
-                tools:ignore="MissingConstraints" />
+                tools:ignore="MissingConstraints"
+                android:focusable="true"
+                android:clickable="true"/>
 
             <Button
                 android:id="@+id/estudiante_btn"
@@ -83,7 +85,10 @@
                 android:textColorLink="#FEC203"
                 android:textSize="9sp"
                 style="?android:attr/buttonBarStyle"
-                tools:ignore="MissingConstraints" />
+                tools:ignore="MissingConstraints"
+                android:focusable="true"
+                android:clickable="true"
+                />
 
             <Button
                 android:id="@+id/padre_btn"
@@ -97,7 +102,9 @@
                 android:textColorLink="#FEC203"
                 android:textSize="11sp"
                 style="?android:attr/buttonBarStyle"
-                tools:ignore="MissingConstraints" />
+                tools:ignore="MissingConstraints"
+                android:focusable="true"
+                android:clickable="true"/>
         </LinearLayout>
 
         <TextView
@@ -110,7 +117,7 @@
             android:textColor="@color/black" />
 
         <EditText
-            android:id="@+id/nombreEditText"
+            android:id="@+id/NombreET"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:ems="10"
@@ -133,7 +140,7 @@
             android:textColor="@color/black" />
 
         <EditText
-            android:id="@+id/CorreoEditText_email"
+            android:id="@+id/CorreoET"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:ems="10"
@@ -155,7 +162,7 @@
             android:textColor="@color/black" />
 
         <EditText
-            android:id="@+id/PasswordEditText"
+            android:id="@+id/PasswordET"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginBottom="20dp"
@@ -188,7 +195,9 @@
                 android:textColorLink="#FEC203"
                 android:textSize="12sp"
                 style="?android:attr/buttonBarStyle"
-                tools:ignore="MissingConstraints" />
+                tools:ignore="MissingConstraints"
+                android:focusable="true"
+                android:clickable="true"/>
 
             <Button
                 android:id="@+id/regresarInicio_btn"
@@ -204,7 +213,9 @@
                 android:textColorLink="#FEC203"
                 android:textSize="12sp"
                 style="?android:attr/buttonBarStyle"
-                tools:ignore="MissingConstraints" />
+                tools:ignore="MissingConstraints"
+                android:focusable="true"
+                android:clickable="true"/>
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

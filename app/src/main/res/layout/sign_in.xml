@@ -6,8 +6,7 @@
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
-
-    tools:context=".AuthActivity">
+    tools:context=".SignInActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -52,26 +51,27 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:orientation="horizontal">
 
             <ImageView
                 android:id="@+id/imageView2"
                 android:layout_width="0dp"
                 android:layout_height="25dp"
-                android:layout_weight="1"
                 android:layout_gravity="center"
+                android:layout_weight="1"
                 android:contentDescription="@string/correo"
                 app:srcCompat="@drawable/emailicon" />
 
             <EditText
-                android:id="@+id/editTextEmailAddress"
+                android:id="@+id/CorreoET"
                 android:layout_width="wrap_content"
                 android:layout_height="48dp"
+                android:autofillHints="emailAddress"
                 android:ems="10"
+                android:fontFamily="@font/varela_round"
                 android:hint="@string/ingresa_tu_correo"
                 android:inputType="textEmailAddress"
-                android:fontFamily="@font/varela_round"
-                android:autofillHints="emailAddress"
                 android:textColor="@color/black" />
         </LinearLayout>
 
@@ -85,8 +85,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
-            android:text="@string/password"
             android:fontFamily="@font/varela_round"
+            android:text="@string/password"
             android:textColor="@color/black" />
 
         <LinearLayout
@@ -98,20 +98,20 @@
                 android:id="@+id/imageView3"
                 android:layout_width="0dp"
                 android:layout_height="25dp"
-                android:layout_weight="1"
                 android:layout_gravity="center"
+                android:layout_weight="1"
                 android:contentDescription="@string/password"
                 app:srcCompat="@drawable/passwordicon" />
 
             <EditText
-                android:id="@+id/editTextPassword"
+                android:id="@+id/PasswordET"
                 android:layout_width="wrap_content"
                 android:layout_height="48dp"
+                android:autofillHints=""
                 android:ems="10"
+                android:fontFamily="@font/varela_round"
                 android:hint="@string/ingresa_tu_contrasenia"
                 android:inputType="textPassword"
-                android:fontFamily="@font/varela_round"
-                android:autofillHints=""
                 android:textColor="@color/black" />
         </LinearLayout>
 
@@ -141,16 +141,20 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:clickable="true"
+                android:focusable="true"
+                android:fontFamily="@font/varela_round"
                 android:text="@string/click_aca_para_registrarte"
                 android:textAlignment="center"
                 android:textColor="@color/ed_blue"
                 android:textColorLink="@color/ed_blue"
-                android:fontFamily="@font/varela_round"
-                android:textSize="12sp" />
+                android:textSize="12sp"
+                tools:ignore="TouchTargetSizeCheck" />
         </LinearLayout>
 
         <Button
             android:id="@+id/LoginButton"
+            style="?android:attr/buttonBarStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -160,7 +164,6 @@
             android:textColor="@color/white"
             android:textColorLink="#FEC203"
             android:textSize="20sp"
-            style="?android:attr/buttonBarStyle"
             tools:ignore="MissingConstraints" />
 
     </LinearLayout>

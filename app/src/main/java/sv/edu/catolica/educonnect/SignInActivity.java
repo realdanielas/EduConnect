@@ -11,10 +11,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import java.util.Objects;
+
 public class SignInActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private EditText emailET, passET;
-    private TextView registrar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +25,15 @@ public class SignInActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         emailET = findViewById(R.id.CorreoET);
         passET = findViewById(R.id.PasswordET);
-        registrar = findViewById(R.id.registrarseTextView);
+        TextView registrar = findViewById(R.id.registrarseTextView);
+
+        //revisa si el usuario ya esta logueado
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if (currentUser != null){
+            //si el usuario ya esta logueado, redirige a home
+            startActivity(new Intent(SignInActivity.this, SignUpActivity.class));
+            finish();
+        }
 
         registrar.setOnClickListener(view -> {
             startActivity(new Intent(SignInActivity.this, SignUpActivity.class));
@@ -45,9 +54,11 @@ public class SignInActivity extends AppCompatActivity {
             if (task.isSuccessful()){
                 FirebaseUser user = mAuth.getCurrentUser();
                 Toast.makeText(SignInActivity.this, "Inicio de Sesión correcto", Toast.LENGTH_SHORT).show();
-                //Redirigir a main
+                //Redirigir a home
+                startActivity(new Intent(SignInActivity.this, HomeActivity.class));
+                finish();
             } else {
-                Toast.makeText(SignInActivity.this, "Inicio de Sesión fallido: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(SignInActivity.this, "Inicio de Sesión fallido: " + Objects.requireNonNull(task.getException()).getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }

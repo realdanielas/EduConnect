@@ -1,13 +1,13 @@
 package sv.edu.catolica.educonnect;
 
-public class User {
+public class Usuario {
     private String uid;
     private String email;
     private String rol;
 
-    public User(){    }
+    public Usuario(){    }
 
-    public User(String uid, String email, String rol){
+    public Usuario(String uid, String email, String rol){
         this.uid = uid;
         this.email = email;
         this.rol = rol;

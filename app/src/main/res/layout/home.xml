@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/home"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
     android:orientation="vertical"
@@ -17,7 +17,7 @@
 
         <!--header-->
         <TextView
-            android:id="@+id/saludo"
+            android:id="@+id/saludoTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingBottom="8dp"
@@ -51,61 +51,12 @@
             android:textSize="18sp"
             android:textStyle="bold" />
 
-        <!-- Card Actividad-->
-        <LinearLayout
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/actividadesRV"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                app:cardCornerRadius="8dp"
-                app:cardElevation="4dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:paddingBottom="16dp">
-
-                    <TextView
-                        android:id="@+id/materia"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="APPS MÓVILES I"
-                        android:textColor="#000000"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/titulo"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingTop="4dp"
-                        android:text="Avance de Proyecto"
-                        android:textColor="#000000" />
-
-                    <TextView
-                        android:id="@+id/fechaEntrega"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingTop="4dp"
-                        android:text="Entrega 4 de octubre"
-                        android:textColor="#666666" />
-
-                    <TextView
-                        android:id="@+id/descripcion"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingTop="4dp"
-                        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-                        android:textColor="#666666" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-        </LinearLayout>
+            android:layout_height="wrap_content"/>
     </LinearLayout>
-
+    
     <!-- Barra de navegacion  -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"

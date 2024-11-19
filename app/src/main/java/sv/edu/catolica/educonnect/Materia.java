@@ -34,6 +34,9 @@ public class Materia {
     }
 
     public void setUnidadesValorativas(Integer unidadesValorativas) {
+        if (unidadesValorativas == null || unidadesValorativas < 0) {
+            throw new IllegalArgumentException("Las unidades valorativas deben ser un número positivo o cero.");
+        }
         this.unidadesValorativas = unidadesValorativas;
     }
 

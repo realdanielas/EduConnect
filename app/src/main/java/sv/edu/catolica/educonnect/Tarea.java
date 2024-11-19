@@ -7,19 +7,17 @@ public class Tarea extends Actividad{
     private String enlaceRecursos;
     private String comentarios;
 
-    public Tarea(String titulo, String descripcion, Date fechaInicio, Date fechaFin, ActividadEstado actividadEstado, double calificacion, String comentarios, String enlaceRecursos) {
-        // Llamada al constructor de la clase base (Actividad) y pasando null para las listas
-        super(titulo, descripcion, fechaInicio, fechaFin, actividadEstado, TipoActividad.TAREA, null);
+    public Tarea(String titulo, String descripcion, Date fechaInicio, Date fechaFin, double calificacion, String comentarios, String enlaceRecursos) {
+        super(titulo, descripcion, fechaInicio, fechaFin, TipoActividad.TAREA, null); // Pass TipoActividad.TAREA
 
-        // Validacion de Calificacion
+        // Validation and initialization
         if (calificacion < 0 || calificacion > 10) {
             throw new IllegalArgumentException("La calificación debe estar entre 0 y 10.");
         }
-
-        // Inicializar los nuevos campos específicos de Tarea
         this.calificacion = calificacion;
-        this.comentarios = comentarios != null ? comentarios : ""; // Default en caso de null
-        this.enlaceRecursos = enlaceRecursos != null ? enlaceRecursos : ""; // Default en caso de null
+        this.comentarios = comentarios != null ? comentarios : ""; // Default in case of null
+        this.enlaceRecursos = enlaceRecursos != null ? enlaceRecursos : ""; // Default in case of null
+
     }
 
     public double getCalificacion() {

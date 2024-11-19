@@ -31,7 +31,7 @@ public class SignInActivity extends AppCompatActivity {
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if (currentUser != null){
             //si el usuario ya esta logueado, redirige a home
-            startActivity(new Intent(SignInActivity.this, SignUpActivity.class));
+            startActivity(new Intent(SignInActivity.this, HomeActivity.class));
             finish();
         }
 

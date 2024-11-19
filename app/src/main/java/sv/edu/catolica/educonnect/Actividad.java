@@ -13,7 +13,7 @@ public class Actividad {
     private Object actividad; //El objeto especifico (Examen o Tarea)
 
     // Constructor
-    public Actividad(String titulo, String descripcion, Date fechaInicio, Date fechaFin, ActividadEstado actividadEstado, TipoActividad tipoActividad, Object actividad) {
+    public Actividad(String titulo, String descripcion, Date fechaInicio, Date fechaFin, TipoActividad tipoActividad, Object actividad) {
         if (fechaInicio.after(fechaFin)) {
             throw new IllegalArgumentException("La fecha de inicio no puede ser después de la fecha de fin.");
         }
@@ -25,13 +25,13 @@ public class Actividad {
         this.tipoActividad = tipoActividad;
         this.actividad = actividad;
 
-        // Validación del tipo de actividad
+        /* Validación del tipo de actividad
         if (tipoActividad == TipoActividad.EXAMEN && !(actividad instanceof Examen)) {
             throw new IllegalArgumentException("El tipo de actividad debe ser un Examen.");
         }
         if (tipoActividad == TipoActividad.TAREA && !(actividad instanceof Tarea)) {
             throw new IllegalArgumentException("El tipo de actividad debe ser una Tarea.");
-        }
+        }*/
     }
      public String getTitulo() {
         return titulo;

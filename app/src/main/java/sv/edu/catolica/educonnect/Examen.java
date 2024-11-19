@@ -6,18 +6,15 @@ public class Examen extends Actividad{
     private double calificacion;
     private String comentarios;
 
-    public Examen(String titulo, String descripcion, Date fechaInicio, Date fechaFin, ActividadEstado actividadEstado, double calificacion, String comentarios) {
-        // Llamada al constructor de la clase base (Actividad) y pasando null para las listas
-        super(titulo, descripcion, fechaInicio, fechaFin, actividadEstado, TipoActividad.EXAMEN, null);
+    public Examen(String titulo, String descripcion, Date fechaInicio, Date fechaFin, double calificacion, String comentarios) {
+        super(titulo, descripcion, fechaInicio, fechaFin, TipoActividad.EXAMEN, null); // Pass TipoActividad.EXAMEN
 
-        // Validacion de Calificacion
+        // Validation and initialization
         if (calificacion < 0 || calificacion > 10) {
             throw new IllegalArgumentException("La calificación debe estar entre 0 y 10.");
         }
-
-        // Inicializar los nuevos campos específicos de Examen
         this.calificacion = calificacion;
-        this.comentarios = comentarios != null ? comentarios : ""; // Default en caso de null
+        this.comentarios = comentarios != null ? comentarios : ""; // Default in case of null
     }
 
     public double getCalificacion() {

@@ -64,7 +64,7 @@ public class SignUpActivity extends AppCompatActivity {
                     FirebaseUser user = mAuth.getCurrentUser();
                     if (user != null) {
                         // Crea el objeto usuario
-                        Usuario newUser = new Usuario(user.getUid(), email, rolSeleccionado);
+                        Usuario newUser = new Usuario(user.getUid(), nombre, email, rolSeleccionado);
 
                         // guarda la data en firestore
                         db.collection("users").document(user.getUid()).set(newUser)

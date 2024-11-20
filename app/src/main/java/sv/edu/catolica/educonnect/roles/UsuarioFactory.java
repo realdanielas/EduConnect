@@ -1,36 +1,46 @@
-package sv.edu.catolica.educonnect;
+package sv.edu.catolica.educonnect.roles;
 
 import java.util.List;
 import java.util.Date;
 
+import sv.edu.catolica.educonnect.models.Materia;
 
-public class UsuarioFactory{
-    public static Usuario crearUsuario(RolUsuario rol, String uid, String nombre, String email, String telefonoContacto, Object args){
-        switch (rol){
-            case ADMIN:
-                String areaResponsable = (String) args;
-                Boolean superAdmin = (Boolean) args;
-                return new Admin(uid, nombre, email, rol.toString(), telefonoContacto, areaResponsable, superAdmin);
-            case DOCENTE:
-                return new Docente(uid, nombre, email, rol.toString(), telefonoContacto, (List<Materia>) args, (String) args, (String) args);
-            case ESTUDIANTE:
-                return new Estudiante(uid, nombre, email, rol.toString(), telefonoContacto, (String) args, (List<Materia>) args, (Date) args, (Double) args);
-            case PADRE:
-                return new Padre(uid, nombre, email, rol.toString(), telefonoContacto, (List<Estudiante>) args, (String) args, (String) args);
-            default:
-                throw new IllegalArgumentException("Rol de usuario no válido: " + rol);
+
+public class UsuarioFactory {
+
+    private static void validarCamposObligatorios(String... campos){
+        for (String campo : campos){
+            if (campo == null || campo.isEmpty()){
+                throw new IllegalArgumentException("Todos los campos son requeridos.");
+            }
         }
     }
-    private static Admin crearAdmin(String uid, String nombre, String email, String telefonoContacto, String areaResponsable, Boolean superAdmin){
-        return new Admin(uid, nombre, email, RolUsuario.ADMIN.toString(), telefonoContacto, areaResponsable, superAdmin);
+
+    //Metodo factory para crear Admin
+    public static Admin crearAdmin(String uid, String nombre, String email, String rol, String telefonoContacto, String areaResponsable, Boolean superAdmin){
+        validarCamposObligatorios(uid, nombre, email, rol, telefonoContacto, areaResponsable);
+
+        return new Admin(uid, nombre, email, rol, telefonoContacto, areaResponsable, superAdmin);
     }
-    private static Docente crearDocente(String uid, String nombre, String email, String telefonoContacto, List<Materia> materiasAsignadas, String titulo, String departamento){
-        return new Docente(uid, nombre, email, RolUsuario.DOCENTE.toString(), telefonoContacto, materiasAsignadas, titulo, departamento);
+
+    //Metodo factory para crear Docente
+    public static Docente crearDocente(String uid, String nombre, String email, String rol, String telefonoContacto, List<Materia> materiasAsignadas, String titulo, String departamento){
+        validarCamposObligatorios(uid, nombre, email, rol, telefonoContacto, departamento);
+        return new Docente(uid, nombre, email, rol, telefonoContacto, materiasAsignadas, titulo, departamento);
     }
-    private static Estudiante crearEstudiante(String uid, String nombre, String email, String telefonoContacto, String carnet, List<Materia> materiasInscritas, Date fechaIngreso, Double promedioGeneral){
-        return new Estudiante(uid, nombre, email, RolUsuario.ESTUDIANTE.toString(), telefonoContacto, carnet, materiasInscritas, fechaIngreso, promedioGeneral);
+
+    //Metodo factory para crear Estudiante
+    public static Estudiante crearEstudiante(String uid, String nombre, String email, String rol, String telefonoContacto, String carnet, List<Materia> materiasInscritas, Date fechaIngreso, Double promedioGeneral){
+        validarCamposObligatorios(uid, nombre, email, rol, telefonoContacto);
+        if (fechaIngreso == null){
+            throw new IllegalArgumentException("La fecha de ingreso es requerida.");
+        }
+        return new Estudiante(uid, nombre, email, rol, telefonoContacto, carnet, materiasInscritas, fechaIngreso, promedioGeneral);
     }
-    private static Padre crearPadre(String uid, String nombre, String email, String telefonoContacto, List<Estudiante> hijos, String direccion, String parentesco){
-        return new Padre(uid, nombre, email, RolUsuario.PADRE.toString(), telefonoContacto, hijos, direccion, parentesco);
+
+    //Metodo factory para crear Padre
+    public static Padre crearPadre(String uid, String nombre, String email, String rol, String telefonoContacto, List<Estudiante> hijos, String direccion, String parentesco){
+        validarCamposObligatorios(uid, nombre, email, rol, telefonoContacto, direccion, parentesco);
+        return new Padre(uid, nombre, email, rol, telefonoContacto, hijos, direccion, parentesco);
     }
 }

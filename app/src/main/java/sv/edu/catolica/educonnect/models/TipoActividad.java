@@ -1,4 +1,4 @@
-package sv.edu.catolica.educonnect;
+package sv.edu.catolica.educonnect.models;
 
 public enum TipoActividad {
     EXAMEN("Examen"),

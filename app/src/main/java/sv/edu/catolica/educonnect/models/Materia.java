@@ -1,6 +1,8 @@
-package sv.edu.catolica.educonnect;
+package sv.edu.catolica.educonnect.models;
 
 import java.util.List;
+
+import sv.edu.catolica.educonnect.roles.Usuario;
 
 public class Materia {
     private String nombre;

@@ -1,4 +1,4 @@
-package sv.edu.catolica.educonnect;
+package sv.edu.catolica.educonnect.roles;
 
 public class Admin extends Usuario{
     private String areaResponsable;

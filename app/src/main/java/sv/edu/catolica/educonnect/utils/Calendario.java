@@ -1,9 +1,11 @@
-package sv.edu.catolica.educonnect;
+package sv.edu.catolica.educonnect.utils;
 
 import android.os.Bundle;
 import android.widget.CalendarView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import sv.edu.catolica.educonnect.R;
 
 public class Calendario extends AppCompatActivity {
     CalendarView calendario;

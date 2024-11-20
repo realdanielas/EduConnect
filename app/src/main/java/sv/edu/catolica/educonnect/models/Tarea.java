@@ -1,4 +1,4 @@
-package sv.edu.catolica.educonnect;
+package sv.edu.catolica.educonnect.models;
 
 import java.util.Date;
 

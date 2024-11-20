@@ -1,4 +1,4 @@
-package sv.edu.catolica.educonnect;
+package sv.edu.catolica.educonnect.adapters;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +11,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.Locale;
+
+import sv.edu.catolica.educonnect.models.Actividad;
+import sv.edu.catolica.educonnect.R;
 
 public class ActividadAdaptador extends RecyclerView.Adapter<ActividadAdaptador.ActividadViewHolder> {
     private List<Actividad> actividades;

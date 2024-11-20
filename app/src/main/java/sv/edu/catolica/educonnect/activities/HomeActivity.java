@@ -1,4 +1,4 @@
-package sv.edu.catolica.educonnect;
+package sv.edu.catolica.educonnect.activities;
 
 import android.os.Bundle;
 import android.widget.CalendarView;
@@ -12,6 +12,12 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+
+import sv.edu.catolica.educonnect.models.Actividad;
+import sv.edu.catolica.educonnect.adapters.ActividadAdaptador;
+import sv.edu.catolica.educonnect.models.Examen;
+import sv.edu.catolica.educonnect.R;
+import sv.edu.catolica.educonnect.models.Tarea;
 
 public class HomeActivity extends AppCompatActivity {
 

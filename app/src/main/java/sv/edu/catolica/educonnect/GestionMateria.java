@@ -2,6 +2,9 @@ package sv.edu.catolica.educonnect;
 
 import java.util.List;
 
+import sv.edu.catolica.educonnect.models.Materia;
+import sv.edu.catolica.educonnect.roles.Usuario;
+
 public class GestionMateria {
     public void agregarAlumno(Materia materia, Usuario alumno){
         if (alumno != null && !materia.getAlumnos().contains(alumno)){

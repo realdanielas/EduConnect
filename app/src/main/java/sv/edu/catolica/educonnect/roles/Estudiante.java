@@ -1,7 +1,9 @@
-package sv.edu.catolica.educonnect;
+package sv.edu.catolica.educonnect.roles;
 
 import java.util.Date;
 import java.util.List;
+
+import sv.edu.catolica.educonnect.models.Materia;
 
 public class Estudiante extends Usuario{
     private String carnet;
@@ -48,4 +50,6 @@ public class Estudiante extends Usuario{
     public void setPromedioGeneral(Double promedioGeneral) {
         this.promedioGeneral = promedioGeneral;
     }
+
+
 }

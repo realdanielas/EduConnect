@@ -1,6 +1,8 @@
 package sv.edu.catolica.educonnect.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.TextView;
 
@@ -35,6 +37,9 @@ public class HomeActivity extends AppCompatActivity {
         saludoTV = findViewById(R.id.saludoTV);
         CalendarView calendario = findViewById(R.id.calendario);
         actividadesRV = findViewById(R.id.actividadesRV);
+        Button chatButton = findViewById(R.id.chatButton);
+
+
 
         //Seteando el RecyclerView
         actividadesRV.setLayoutManager(new LinearLayoutManager(this));
@@ -55,6 +60,12 @@ public class HomeActivity extends AppCompatActivity {
             calendar.set(year, month, dayOfMonth);
             Date fechaSeleccionada = calendar.getTime();
             mostrarActividadesParaFecha(fechaSeleccionada);
+        });
+
+        //Listener para el boton de chat
+        chatButton.setOnClickListener(v -> {
+            Intent intent = new Intent(HomeActivity.this, ChatActivity.class);
+            startActivity(intent);
         });
     }
 

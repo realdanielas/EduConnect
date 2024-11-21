@@ -36,13 +36,13 @@ public class SignInActivity extends AppCompatActivity {
         progressBar = findViewById(R.id.progressBar);
         TextView registrar = findViewById(R.id.registrarseTextView);
 
-        /*Revisa si el usuario ya está autenticado
+        //Revisa si el usuario ya está autenticado
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if (currentUser != null) {
             //Si el usuario ya está autenticado, redirige a la actividad HomeActivity
             startActivity(new Intent(SignInActivity.this, HomeActivity.class));
             finish();
-        }*/
+        }
 
         //Configurar el boton para registrarse
         registrar.setOnClickListener(view -> {
